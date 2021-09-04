@@ -41,6 +41,16 @@ public class MenuIngresoElectrodomestico {
         return nevera;
     }
 
+    private static Electrodomestico constTelevisor(Electrodomestico electrodomestico) {
+        char consumo = obtenerConsumo();
+        String procedencia = obtenerProcedencia();
+        int tamanio = obtenerTamanio();
+        boolean tieneTDT = consultarTDT();
+
+        Electrodomestico televisor = new Televisor(procedencia, consumo, tamanio, tieneTDT);
+        return televisor;
+    }
+
     private static int obtenerCapacidad() {
         int capacidad = -1;
         do {
@@ -53,15 +63,6 @@ public class MenuIngresoElectrodomestico {
         return capacidad;
     }
 
-    private static Electrodomestico constTelevisor(Electrodomestico electrodomestico) {
-        char consumo = obtenerConsumo();
-        String procedencia = obtenerProcedencia();
-        int tamanio = obtenerTamanio();
-        boolean tieneTDT = consultarTDT();
-
-        Electrodomestico televisor = new Televisor(procedencia, consumo, tamanio, tieneTDT);
-        return televisor;
-    }
 
     private static boolean consultarTDT() {
         char opcionElegida = ' ';
@@ -75,6 +76,8 @@ public class MenuIngresoElectrodomestico {
                 JOptionPane.showMessageDialog(null,"Ingrese un valor numerico que sea 1 o 2");
             }
         } while(opcionElegida < '1' || opcionElegida > '2');
+
+        //operador ternario
         tieneTDT = (opcionElegida == '1')?true:false;
         return tieneTDT;
     }
