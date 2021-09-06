@@ -3,11 +3,12 @@ package posada.Santiago.Aplicacion;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Recursos {
-    private List<String> nombres;
+    private List<String> nombres = new LinkedList<String>();
 
     public Recursos (){
         this.popularLista();
