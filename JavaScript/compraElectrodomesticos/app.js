@@ -3,6 +3,18 @@ import Electrodomestico from "./electrodomesticos.js";
 import {estabelcerConsumo, establecerProveniencia, establecerTamanio, establecerTdt, establecerCapacidad} from "./menus.js"
 import Nevera from "./neveras.js";
 
+const Inventario = {
+    elecBNAl: 5,
+    nevANal: 10,
+    tvCInter: 7,
+    tvBInter: 13,
+    tvANal: 3,
+    elecAInter: 8,
+    nevCInter: 12
+}
+alert(Inventario.elecBNAl - 1);
+
+
 let seguirMenuInicial = true;
 let electrodomesticosComprados = [];
 document.open();
