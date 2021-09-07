@@ -22,9 +22,12 @@ export const InventarioNevera = {
     nevAInter: 0,
 
     nevB: 0,
+    nevBInter: 0,
+    nevBNal: 0,
 
-    nevC:12,
-    nevCNal: 0,
+
+    nevC:13,
+    nevCNal: 1,
     nevCInter: 12
 }
 
@@ -39,5 +42,7 @@ export const InventarioElectrodomestico = {
     elecBNAl: 5,
     elecBInter: 0,
 
-    elecC: 0  
+    elecC: 0,  
+    elecCNAl: 0,
+    elecCInter: 0
 }

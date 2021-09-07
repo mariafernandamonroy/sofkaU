@@ -9,7 +9,7 @@ let electrodomesticosComprados = [];
 document.open();
 
 do {
-    let opcionElegida = prompt('Escoja la funcion que desea realizar\n 1- Comprar electrodomestico.\n 2- Comprar televisor. \n 3- Comprar nevera. \n 3- generar factura \n 4- salir del programa.');
+    let opcionElegida = prompt('Escoja la funcion que desea realizar\n 1- Comprar electrodomestico.\n 2- Comprar televisor. \n 3- Comprar nevera. \n 4- generar factura \n 5- salir del programa.');
     if(opcionElegida === '1') {
         if (InventarioElectrodomestico.elec > 0) {
             let consumoElegidoElectrodomestico = estabelcerConsumo();
@@ -326,45 +326,154 @@ do {
     }else if (opcionElegida === '3') {
         if(InventarioNevera.nev > 0) {
             let consumoElegidoNevera = estabelcerConsumo();
-            switch (consumoElegidoElectrodomestico) {
+            switch (consumoElegidoNevera) {
                 case 'A':
-                    if(InventarioElectrodomestico.elecA > 0) {
+                    if(InventarioNevera.nevA > 0) {
+                        let provenienciaNevera = establecerProveniencia();
+                        switch(provenienciaNevera){
+                            case '1':
+                                if (InventarioNevera.nevAInter > 0){
+                                    let capacidadNevera = establecerCapacidad();
 
+                                    const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
+                                    neveraComprada.valorPorConsumo(consumoElegidoNevera);
+                                    neveraComprada.valorPorProveniencia(provenienciaNevera);
+                                    neveraComprada.valorPorCapacidad(capacidadNevera);
+                                    electrodomesticosComprados.push(neveraComprada);
+                                    InventarioNevera.nev = InventarioNevera.nev - 1;
+                                    InventarioNevera.nevA = InventarioNevera.nevA - 1;
+                                    InventarioNevera.nevAInter = InventarioNevera.nevAInter - 1;
+                                    alert('Se compro la nevera tipo A Inter con exito')
+
+                                }else {
+                                    alert('No hay neveras A inter')
+                                }
+                                break;
+                            case '2':
+                                if (InventarioNevera.nevANal > 0){
+                                    let capacidadNevera = establecerCapacidad();
+
+                                    const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
+                                    neveraComprada.valorPorConsumo(consumoElegidoNevera);
+                                    neveraComprada.valorPorProveniencia(provenienciaNevera);
+                                    neveraComprada.valorPorCapacidad(capacidadNevera);
+                                    electrodomesticosComprados.push(neveraComprada);
+                                    InventarioNevera.nev = InventarioNevera.nev - 1;
+                                    InventarioNevera.nevA = InventarioNevera.nevA - 1;
+                                    InventarioNevera.nevANal = InventarioNevera.nevANal - 1;
+                                    alert('Se compro la nevera tipo A Nacional con exito')
+                                }else {
+                                    alert('No hay neveras A nacional')
+                                }
+                                break;
+                            default:
+                                alert('No entramso a ninguno de los casos de proveniencia de nev tipo A')
+                                break;
+                        }
                     } else {
-                        alert('No hay electrodomesticos de tipo consumo A')
+                        alert('No hay neveras de tipo consumo A')
                     }
                     break;
                 case 'B':
-                    if(InventarioElectrodomestico.elecB > 0) {
+                    if(InventarioNevera.nevB > 0) {
+                        let provenienciaNevera = establecerProveniencia();
+                        switch(provenienciaNevera){
+                            case '1':
+                                if (InventarioNevera.nevBInter > 0){
+                                    let capacidadNevera = establecerCapacidad();
 
+                                    const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
+                                    neveraComprada.valorPorConsumo(consumoElegidoNevera);
+                                    neveraComprada.valorPorProveniencia(provenienciaNevera);
+                                    neveraComprada.valorPorCapacidad(capacidadNevera);
+                                    electrodomesticosComprados.push(neveraComprada);
+                                    InventarioNevera.nev = InventarioNevera.nev - 1;
+                                    InventarioNevera.nevB = InventarioNevera.nevB - 1;
+                                    InventarioNevera.nevBInter = InventarioNevera.nevBInter - 1;
+                                    alert('Se compro la nevera tipo B Inter con exito')
+
+                                }else {
+                                    alert('No hay neveras B inter')
+                                }
+                                break;
+                            case '2':
+                                if (InventarioNevera.nevBNal > 0){
+                                    let capacidadNevera = establecerCapacidad();
+
+                                    const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
+                                    neveraComprada.valorPorConsumo(consumoElegidoNevera);
+                                    neveraComprada.valorPorProveniencia(provenienciaNevera);
+                                    neveraComprada.valorPorCapacidad(capacidadNevera);
+                                    electrodomesticosComprados.push(neveraComprada);
+                                    InventarioNevera.nev = InventarioNevera.nev - 1;
+                                    InventarioNevera.nevB = InventarioNevera.nevB - 1;
+                                    InventarioNevera.nevBNal = InventarioNevera.nevBNal - 1;
+                                    alert('Se compro la nevera tipo B Nacional con exito')
+                                }else {
+                                    alert('No hay neveras B nacional')
+                                }
+                                break;
+                            default:
+                                alert('No entramso a ninguno de los casos de proveniencia de nev tipo A')
+                                break;
+                        }
                     } else {
-                        alert('No hay electrodomesticos de tipo consumo B')
+                        alert('No hay neveras de tipo consumo B')
                     }
                     break;
                 case 'C':
-                    if(InventarioElectrodomestico.elecC > 0) {
+                    if(InventarioNevera.nevC > 0) {
+                        let provenienciaNevera = establecerProveniencia();
+                        switch(provenienciaNevera){
+                            case '1':
+                                if (InventarioNevera.nevCInter > 0){
+                                    let capacidadNevera = establecerCapacidad();
+
+                                    const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
+                                    neveraComprada.valorPorConsumo(consumoElegidoNevera);
+                                    neveraComprada.valorPorProveniencia(provenienciaNevera);
+                                    neveraComprada.valorPorCapacidad(capacidadNevera);
+                                    electrodomesticosComprados.push(neveraComprada);
+                                    InventarioNevera.nev = InventarioNevera.nev - 1;
+                                    InventarioNevera.nevC = InventarioNevera.nevC - 1;
+                                    InventarioNevera.nevCInter = InventarioNevera.nevCInter - 1;
+                                    alert('Se compro la nevera tipo C Inter con exito')
+
+                                }else {
+                                    alert('No hay neveras C inter')
+                                }
+                                break;
+                            case '2':
+                                if (InventarioNevera.nevCNal > 0){
+                                    let capacidadNevera = establecerCapacidad();
+
+                                    const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
+                                    neveraComprada.valorPorConsumo(consumoElegidoNevera);
+                                    neveraComprada.valorPorProveniencia(provenienciaNevera);
+                                    neveraComprada.valorPorCapacidad(capacidadNevera);
+                                    electrodomesticosComprados.push(neveraComprada);
+                                    InventarioNevera.nev = InventarioNevera.nev - 1;
+                                    InventarioNevera.nevC = InventarioNevera.nevC - 1;
+                                    InventarioNevera.nevCNal = InventarioNevera.nevCNal - 1;
+                                    alert('Se compro la nevera tipo C Nacional con exito')
+                                }else {
+                                    alert('No hay neveras C nacional')
+                                }
+                                break;
+                            default:
+                                alert('No entramso a ninguno de los casos de proveniencia de nev tipo C')
+                                break;
+                        }
 
                     } else {
-                        alert('No hay electrodomesticos de tipo consumo C')
+                        alert('No hay neveras de tipo consumo C')
                     }
                     break;
                 default:
-                    alert('no entramos a ninguno de los casos de consumo en los elec');
+                    alert('no entramos a ninguno de los casos de consumo en las neveras');
                     break;
             }
-            let provenienciaNevera = establecerProveniencia();
-            let capacidadNevera = establecerCapacidad();
-            document.write(consumoElegidoNevera);
-            document.write(provenienciaNevera);
-            document.write(capacidadNevera);
-            alert('hasta aqui vamos nevera');
 
-            const neveraComprada = new Nevera(consumoElegidoNevera, provenienciaNevera, capacidadNevera);
-            neveraComprada.valorPorConsumo(consumoElegidoNevera);
-            neveraComprada.valorPorProveniencia(provenienciaNevera);
-            neveraComprada.valorPorCapacidad(capacidadNevera);
-            console.log(neveraComprada);
-            seguirMenuInicial = false;
         }else {
             alert('No hay mas neveras en inventario');
         }
