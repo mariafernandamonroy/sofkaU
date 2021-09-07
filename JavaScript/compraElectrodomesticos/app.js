@@ -163,48 +163,161 @@ do {
     }else if (opcionElegida === '2') {
         if(InventarioTv.tv > 0){
             let consumoElegidoTelevisor = estabelcerConsumo();
-            switch (consumoElegidoElectrodomestico) {
+            switch (consumoElegidoTelevisor) {
                 case 'A':
-                    if(InventarioElectrodomestico.elecA > 0) {
+                    if(InventarioTv.tvA > 0) {
+                        let provenienciaTelevisor = establecerProveniencia();
+                        switch(provenienciaTelevisor){
+                            case '1':
+                                if (InventarioTv.tvAInter > 0){
+                                    let tamanioTelevisor = establecerTamanio();
+                                    let tdtTelevisor = establecerTdt();
 
+                                    const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
+                                    televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
+                                    televisorComprado.valorPorProveniencia(provenienciaTelevisor);
+                                    televisorComprado.valorPorTamanio(tamanioTelevisor);
+                                    televisorComprado.valorPorTdt(tdtTelevisor);
+                                    electrodomesticosComprados.push(televisorComprado);
+                                    InventarioTv.tv = InventarioTv.tv - 1;
+                                    InventarioTv.tvA = InventarioTv.tvA - 1;
+                                    InventarioTv.tvAInter = InventarioTv.tvAInter - 1;
+                                    alert('Tv a inter comprado con exito');
+                                }else {
+                                    alert('No hay televisores de tipo A Internacional')
+                                }
+                                break;
+                            case '2':
+                                if (InventarioTv.tvANal > 0){
+                                    let tamanioTelevisor = establecerTamanio();
+                                    let tdtTelevisor = establecerTdt();
+
+                                    const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
+                                    televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
+                                    televisorComprado.valorPorProveniencia(provenienciaTelevisor);
+                                    televisorComprado.valorPorTamanio(tamanioTelevisor);
+                                    televisorComprado.valorPorTdt(tdtTelevisor);
+                                    electrodomesticosComprados.push(televisorComprado);
+                                    InventarioTv.tv = InventarioTv.tv - 1;
+                                    InventarioTv.tvA = InventarioTv.tvA - 1;
+                                    InventarioTv.tvANal = InventarioTv.tvANal - 1;
+                                    alert('Tv a nacional comprado con exito')
+                                }else {
+                                    alert('No hay televisores de tipo A Nacional')
+                                }
+                                break;
+                            default:
+                                alert('No entramos a ninguno de los casos de proveniencia de tv tipo A')
+                                break;
+                        }
                     } else {
-                        alert('No hay electrodomesticos de tipo consumo A')
+                        alert('No hay televisor de tipo consumo A')
                     }
                     break;
                 case 'B':
-                    if(InventarioElectrodomestico.elecB > 0) {
+                    if(InventarioTv.tvB > 0) {
+                        let provenienciaTelevisor = establecerProveniencia();
+                        switch(provenienciaTelevisor){
+                            case '1':
+                                if (InventarioTv.tvBInter > 0){
+                                    let tamanioTelevisor = establecerTamanio();
+                                    let tdtTelevisor = establecerTdt();
 
+                                    const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
+                                    televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
+                                    televisorComprado.valorPorProveniencia(provenienciaTelevisor);
+                                    televisorComprado.valorPorTamanio(tamanioTelevisor);
+                                    televisorComprado.valorPorTdt(tdtTelevisor);
+                                    electrodomesticosComprados.push(televisorComprado);
+                                    InventarioTv.tv = InventarioTv.tv - 1;
+                                    InventarioTv.tvB = InventarioTv.tvB - 1;
+                                    InventarioTv.tvBInter= InventarioTv.tvBInter - 1;
+                                    alert('Tv B Internacional comprado con exito')
+                                }else {
+                                    alert('No hay televisores de tipo B Internacional')
+                                }
+                                break;
+                            case '2':
+                                if (InventarioTv.tvBNal > 0){
+                                    let tamanioTelevisor = establecerTamanio();
+                                    let tdtTelevisor = establecerTdt();
+
+                                    const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
+                                    televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
+                                    televisorComprado.valorPorProveniencia(provenienciaTelevisor);
+                                    televisorComprado.valorPorTamanio(tamanioTelevisor);
+                                    televisorComprado.valorPorTdt(tdtTelevisor);
+                                    electrodomesticosComprados.push(televisorComprado);
+                                    InventarioTv.tv = InventarioTv.tv - 1;
+                                    InventarioTv.tvB = InventarioTv.tvB - 1;
+                                    InventarioTv.tvBNal= InventarioTv.tvBNal - 1;
+                                    alert('Tv B Nacional comprado con exito')
+                                }else {
+                                    alert('No hay televisores de tipo B Nacional')
+                                }
+                                break;
+                            default:
+                                alert('No entramos a ninguno de los casos de proveniencia de tv tipo B')
+                                break;
+                        }
                     } else {
-                        alert('No hay electrodomesticos de tipo consumo B')
+                        alert('No hay televisor de tipo consumo B')
                     }
                     break;
                 case 'C':
-                    if(InventarioElectrodomestico.elecC > 0) {
+                    if(InventarioTv.tvC> 0) {
+                        let provenienciaTelevisor = establecerProveniencia();
+                        switch(provenienciaTelevisor){
+                            case '1':
+                                if (InventarioTv.tvCInter > 0){
+                                    let tamanioTelevisor = establecerTamanio();
+                                    let tdtTelevisor = establecerTdt();
 
+                                    const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
+                                    televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
+                                    televisorComprado.valorPorProveniencia(provenienciaTelevisor);
+                                    televisorComprado.valorPorTamanio(tamanioTelevisor);
+                                    televisorComprado.valorPorTdt(tdtTelevisor);
+                                    electrodomesticosComprados.push(televisorComprado);
+                                    InventarioTv.tv = InventarioTv.tv - 1;
+                                    InventarioTv.tvC = InventarioTv.tvC - 1;
+                                    InventarioTv.tvCInter = InventarioTv.tvCInter - 1;
+                                    alert('Tv C Internacional comprado con exito');
+                                }else {
+                                    alert('No hay televisores de tipo C Internacional')
+                                }
+                                break;
+                            case '2':
+                                if (InventarioTv.tvCNal > 0){
+                                    let tamanioTelevisor = establecerTamanio();
+                                    let tdtTelevisor = establecerTdt();
+
+                                    const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
+                                    televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
+                                    televisorComprado.valorPorProveniencia(provenienciaTelevisor);
+                                    televisorComprado.valorPorTamanio(tamanioTelevisor);
+                                    televisorComprado.valorPorTdt(tdtTelevisor);
+                                    electrodomesticosComprados.push(televisorComprado);
+                                    InventarioTv.tv = InventarioTv.tv - 1;
+                                    InventarioTv.tvC = InventarioTv.tvC - 1;
+                                    InventarioTv.tvCNal = InventarioTv.tvCNal - 1;
+                                    alert('Tv C Nacional comprado con exito');
+                                }else {
+                                    alert('No hay televisores de tipo C Nacional')
+                                }
+                                break;
+                            default:
+                                alert('No entramos a ninguno de los casos de proveniencia de tv tipo C')
+                                break;
+                        }
                     } else {
-                        alert('No hay electrodomesticos de tipo consumo C')
+                        alert('No hay televisor de tipo consumo C')
                     }
                     break;
                 default:
-                    alert('no entramos a ninguno de los casos de consumo en los elec');
+                    alert('no entramos a ninguno de los casos de consumo en los televisores');
                     break;
             }
-            let provenienciaTelevisor = establecerProveniencia();
-            let tamanioTelevisor = establecerTamanio();
-            let tdtTelevisor = establecerTdt();
-            document.write(consumoElegidoTelevisor);
-            document.write(provenienciaTelevisor);
-            document.write(tamanioTelevisor);
-            document.write(tdtTelevisor);
-            alert('hasta aqui vamos');
-
-            const televisorComprado = new Televisor(consumoElegidoTelevisor, provenienciaTelevisor, tamanioTelevisor, tdtTelevisor);
-            televisorComprado.valorPorConsumo(consumoElegidoTelevisor);
-            televisorComprado.valorPorProveniencia(provenienciaTelevisor);
-            televisorComprado.valorPorTamanio(tamanioTelevisor);
-            televisorComprado.valorPorTdt(tdtTelevisor);
-            console.log(televisorComprado);
-            seguirMenuInicial = false;
         }else {
             alert('No hay mas televisores en inventario');
         }
