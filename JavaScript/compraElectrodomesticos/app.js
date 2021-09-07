@@ -477,6 +477,20 @@ do {
         }else {
             alert('No hay mas neveras en inventario');
         }
+    }else if (opcionElegida === '4'){
+        let facturaEscrita = '';
+        for (let i = electrodomesticosComprados.lenght; i > 0; i--) {
+            facturaEscrita = facturaEscrita + (electrodomesticosComprados[i - 1].nombre + ' con tipo consumo: ' + electrodomesticosComprados[i - 1].consumo + ' con proveniencia: ' + electrodomesticosComprados[i - 1].proveniencia + ', Proveniencia 1 = Importado y 2 = Nacional; ' + 'Y el valor total es de: ' + electrodomesticosComprados[i - 1].valorTotal + '\n');
+        }
+        alert(facturaEscrita);
+        seguirMenuInicial = false;
+    }
+    else if (opcionElegida === '5'){
+        seguirMenuInicial = false;
+    } else {
+        alert('No se escogio ninguna opcion valida')
     }
 
 } while(seguirMenuInicial);
+
+alert('salimos de Do While');

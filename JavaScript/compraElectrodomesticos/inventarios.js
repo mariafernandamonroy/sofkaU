@@ -26,8 +26,8 @@ export const InventarioNevera = {
     nevBNal: 0,
 
 
-    nevC:13,
-    nevCNal: 1,
+    nevC:12,
+    nevCNal: 0,
     nevCInter: 12
 }
 

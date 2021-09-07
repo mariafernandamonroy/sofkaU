@@ -5,6 +5,7 @@ export default class Nevera extends Electrodomestico{
     constructor(consumo, proveniencia, capacidad){
         super(consumo, proveniencia);
         this.capacidad = capacidad;
+        this.nombre = 'Nevera';
     }
 
     valorPorCapacidad(opc){

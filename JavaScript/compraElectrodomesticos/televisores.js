@@ -6,6 +6,7 @@ export default class Televisor extends Electrodomestico{
         super(consumo, proveniencia);
         this.tamanio = tamanio;
         this.tdt = tdt;
+        this.nombre = 'Televisor';
     }
 
     valorPorTamanio(opc){

@@ -1,5 +1,6 @@
 export default class Electrodomestico {
     constructor(consumo, proveniencia){
+        this.nombre = 'Electrodomestico';
         this.consumo = consumo;
         this.proveniencia = proveniencia;
         this.valorTotal = 0;
